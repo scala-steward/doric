@@ -110,6 +110,10 @@
                         <a class="trait" href="Casting.html" title=""></a>
                         <a href="Casting.html" title="">Casting</a>
                       </li><li class="current-entities indented2">
+                        <a class="object" href="CollectionType$.html" title=""></a>
+                        <a class="trait" href="CollectionType.html" title=""></a>
+                        <a href="CollectionType.html" title="">CollectionType</a>
+                      </li><li class="current-entities indented2">
                         <a class="object" href="DateType$.html" title=""></a>
                         <a class="trait" href="DateType.html" title=""></a>
                         <a href="DateType.html" title="">DateType</a>
@@ -117,6 +121,10 @@
                         <a class="object" href="DoubleC$.html" title=""></a>
                         <a class="trait" href="DoubleC.html" title=""></a>
                         <a href="DoubleC.html" title="">DoubleC</a>
+                      </li><li class="current-entities indented2">
+                        <a class="object" href="LiteralSparkType$.html" title=""></a>
+                        <a class="trait" href="LiteralSparkType.html" title=""></a>
+                        <a href="LiteralSparkType.html" title="">LiteralSparkType</a>
                       </li><li class="current-entities indented2">
                         <a class="object" href="NumericType$.html" title=""></a>
                         <a class="trait" href="NumericType.html" title=""></a>
@@ -162,7 +170,7 @@
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">sealed </span>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
@@ -171,8 +179,9 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Typeclass to relate a type T with it's spark DataType</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>
-  the scala type of the instance</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Typeclass to relate a type T with it's spark DataType
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>
+the scala type of the instance</p></dd></dl><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.types.SparkType.T">T</span>]</dd><dt>Annotations</dt><dd>
                 <span class="name">@implicitNotFound</span><span class="args">(<span>
       
       <span class="defval" name="&quot;Cant use the type ${T} to generate the typed column. Check your imported SparkType[${T}] instances&quot;">...</span>
@@ -233,7 +242,27 @@
         <div id="allMembers">
         
 
-        
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="doric.types.SparkType.OriginalSparkType" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OriginalSparkType"></a><a id="OriginalSparkType:OriginalSparkType"></a>
+      <span class="permalink">
+      <a href="../../doric/types/SparkType.html#OriginalSparkType" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">OriginalSparkType</span>
+      </span>
+      
+      <p class="shortcomment cmt">Scala type when transformed to the dataType
+</p>
+    </li></ol>
+            </div>
 
         <div class="values members">
               <h3>Abstract Value Members</h3>
@@ -252,8 +281,42 @@
         <span class="name">dataType</span><span class="result">: <a href="https://spark.apache.org/docs/3.1.2/api/scala/org/apache/spark/sql/types/DataType.html#org.apache.spark.sql.types.DataType" class="extype" name="org.apache.spark.sql.types.DataType">DataType</a></span>
       </span>
       
-      <p class="shortcomment cmt">The spark DataType</p><div class="fullcomment"><div class="comment cmt"><p>The spark DataType</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
-  the spark DataType</p></dd></dl></div>
+      <p class="shortcomment cmt">The spark DataType
+</p><div class="fullcomment"><div class="comment cmt"><p>The spark DataType
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
+the spark DataType</p></dd></dl></div>
+    </li><li name="doric.types.SparkType#rowFieldTransform" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="rowFieldTransform:Any=&gt;SparkType.this.OriginalSparkType"></a><a id="rowFieldTransform:(Any)⇒OriginalSparkType"></a>
+      <span class="permalink">
+      <a href="../../doric/types/SparkType.html#rowFieldTransform:Any=&gt;SparkType.this.OriginalSparkType" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rowFieldTransform</span><span class="result">: (<a href="https://www.scala-lang.org/api/2.12.15/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a>) ⇒ <a href="#OriginalSparkType" class="extmbr" name="doric.types.SparkType.OriginalSparkType">OriginalSparkType</a></span>
+      </span>
+      
+      
+    </li><li name="doric.types.SparkType#transform" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="transform:SparkType.this.OriginalSparkType=&gt;T"></a><a id="transform:(OriginalSparkType)⇒T"></a>
+      <span class="permalink">
+      <a href="../../doric/types/SparkType.html#transform:SparkType.this.OriginalSparkType=&gt;T" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">transform</span><span class="result">: (<a href="#OriginalSparkType" class="extmbr" name="doric.types.SparkType.OriginalSparkType">OriginalSparkType</a>) ⇒ <span class="extype" name="doric.types.SparkType.T">T</span></span>
+      </span>
+      
+      
     </li></ol>
             </div>
 
@@ -391,6 +454,22 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="doric.types.SparkType#customType" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="customType[O](f2:T=&gt;O):doric.types.SparkType.Custom[O,SparkType.this.OriginalSparkType]"></a><a id="customType[O]((T)⇒O):Custom[O,OriginalSparkType]"></a>
+      <span class="permalink">
+      <a href="../../doric/types/SparkType.html#customType[O](f2:T=&gt;O):doric.types.SparkType.Custom[O,SparkType.this.OriginalSparkType]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">customType</span><span class="tparams">[<span name="O">O</span>]</span><span class="params">(<span name="f2">f2: (<span class="extype" name="doric.types.SparkType.T">T</span>) ⇒ <span class="extype" name="doric.types.SparkType.customType.O">O</span></span>)</span><span class="result">: <a href="SparkType$.html#Custom[T,O]=doric.types.SparkType[T]{typeOriginalSparkType=O}" class="extmbr" name="doric.types.SparkType.Custom">Custom</a>[<span class="extype" name="doric.types.SparkType.customType.O">O</span>, <a href="#OriginalSparkType" class="extmbr" name="doric.types.SparkType.OriginalSparkType">OriginalSparkType</a>]</span>
+      </span>
+      
+      
     </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a><a id="ensuring((SparkType[T])⇒Boolean,⇒Any):SparkType[T]"></a>
       <span class="permalink">
@@ -602,10 +681,12 @@
       </span>
       
       <p class="shortcomment cmt">Checks if the datatype corresponds to the provided datatype, but skipping
-if can be null</p><div class="fullcomment"><div class="comment cmt"><p>Checks if the datatype corresponds to the provided datatype, but skipping
-if can be null</p></div><dl class="paramcmts block"><dt class="param">column</dt><dd class="cmt"><p>
-  the datatype to check</p></dd><dt>returns</dt><dd class="cmt"><p>
-  true if the datatype is equal to the one of the typeclass</p></dd></dl></div>
+if can be null
+</p><div class="fullcomment"><div class="comment cmt"><p>Checks if the datatype corresponds to the provided datatype, but skipping
+if can be null
+</p></div><dl class="paramcmts block"><dt class="param">column</dt><dd class="cmt"><p>
+the datatype to check</p></dd><dt>returns</dt><dd class="cmt"><p>
+true if the datatype is equal to the one of the typeclass</p></dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
@@ -623,9 +704,9 @@ if can be null</p></div><dl class="paramcmts block"><dt class="param">column</dt
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="doric.syntax.LiteralConversions.LiteralOps#lit" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="lit:doric.DoricColumn[L]"></a><a id="lit:DoricColumn[SparkType[T]]"></a>
+      <a id="lit:doric.LiteralDoricColumn[L]"></a><a id="lit:LiteralDoricColumn[SparkType[T]]"></a>
       <span class="permalink">
-      <a href="../../doric/types/SparkType.html#lit:doric.DoricColumn[L]" title="Permalink">
+      <a href="../../doric/types/SparkType.html#lit:doric.LiteralDoricColumn[L]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -634,15 +715,19 @@ if can be null</p></div><dl class="paramcmts block"><dt class="param">column</dt
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">lit</span><span class="result">: <a href="../DoricColumn.html" class="extype" name="doric.DoricColumn">DoricColumn</a>[<a href="" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.types.SparkType.T">T</span>]]</span>
+        <span class="implicit">lit</span><span class="result">: <a href="../LiteralDoricColumn.html" class="extype" name="doric.LiteralDoricColumn">LiteralDoricColumn</a>[<a href="" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.types.SparkType.T">T</span>]]</span>
       </span>
       
-      <p class="shortcomment cmt">Transforms the original value to a literal.</p><div class="fullcomment"><div class="comment cmt"><p>Transforms the original value to a literal.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
-  a literal with the same type.</p></dd></dl><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+      <p class="shortcomment cmt">Transforms the original value to a literal.</p><div class="fullcomment"><div class="comment cmt"><p>Transforms the original value to a literal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>
+a literal with the same type.</p></dd></dl><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.types.SparkType.T">T</span>] to
             <a href="../index.html#LiteralOps[L]extendsAnyRef" class="extmbr" name="doric.LiteralOps">doric.LiteralOps</a>[<a href="" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.types.SparkType.T">T</span>]] performed by method LiteralOps in doric.syntax.LiteralConversions.
-            This conversion will take place only if an implicit value of type <a href="" class="extype" name="doric.types.SparkType">SparkType</a>[<a href="" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.types.SparkType.T">T</span>]] is in scope.
-          </dd><dt>Definition Classes</dt><dd>LiteralOps</dd></dl></div>
+            This conversion will take place only if an implicit value of type <a href="" class="extype" name="doric.types.SparkType">SparkType</a>[<a href="" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.types.SparkType.T">T</span>]] is in scope and at the same time an implicit value of type <a href="LiteralSparkType.html" class="extype" name="doric.types.LiteralSparkType">LiteralSparkType</a>[<a href="" class="extype" name="doric.types.SparkType">SparkType</a>[<span class="extype" name="doric.types.SparkType.T">T</span>]] is in scope.
+          </dd><dt>Definition Classes</dt><dd>LiteralOps</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -697,6 +782,22 @@ if can be null</p></div><dl class="paramcmts block"><dt class="param">column</dt
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="doric.types.SparkType#rowTransformT" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="rowTransformT:Any=&gt;T"></a><a id="rowTransformT:(Any)⇒T"></a>
+      <span class="permalink">
+      <a href="../../doric/types/SparkType.html#rowTransformT:Any=&gt;T" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rowTransformT</span><span class="result">: (<a href="https://www.scala-lang.org/api/2.12.15/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a>) ⇒ <span class="extype" name="doric.types.SparkType.T">T</span></span>
+      </span>
+      
+      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
@@ -730,9 +831,9 @@ if can be null</p></div><dl class="paramcmts block"><dt class="param">column</dt
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="doric.types.SparkType#validate" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="validate(colName:doric.CName)(implicitlocation:doric.sem.Location):doric.Doric[org.apache.spark.sql.Column]"></a><a id="validate(CName)(Location):Doric[Column]"></a>
+      <a id="validate(colName:String)(implicitlocation:doric.sem.Location):doric.Doric[org.apache.spark.sql.Column]"></a><a id="validate(String)(Location):Doric[Column]"></a>
       <span class="permalink">
-      <a href="../../doric/types/SparkType.html#validate(colName:doric.CName)(implicitlocation:doric.sem.Location):doric.Doric[org.apache.spark.sql.Column]" title="Permalink">
+      <a href="../../doric/types/SparkType.html#validate(colName:String)(implicitlocation:doric.sem.Location):doric.Doric[org.apache.spark.sql.Column]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -741,15 +842,17 @@ if can be null</p></div><dl class="paramcmts block"><dt class="param">column</dt
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">validate</span><span class="params">(<span name="colName">colName: <a href="../index.html#CName=doric.CName.Type" class="extmbr" name="doric.CName">CName</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="location">location: <a href="../sem/Location.html" class="extype" name="doric.sem.Location">Location</a></span>)</span><span class="result">: <a href="../index.html#Doric[T]=cats.data.Kleisli[doric.package.DoricValidated,org.apache.spark.sql.Dataset[_],T]" class="extmbr" name="doric.Doric">Doric</a>[<a href="https://spark.apache.org/docs/3.1.2/api/scala/org/apache/spark/sql/Column.html#org.apache.spark.sql.Column" class="extype" name="org.apache.spark.sql.Column">Column</a>]</span>
+        <span class="name">validate</span><span class="params">(<span name="colName">colName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="location">location: <a href="../sem/Location.html" class="extype" name="doric.sem.Location">Location</a></span>)</span><span class="result">: <a href="../index.html#Doric[T]=cats.data.Kleisli[doric.package.DoricValidated,org.apache.spark.sql.Dataset[_],T]" class="extmbr" name="doric.Doric">Doric</a>[<a href="https://spark.apache.org/docs/3.1.2/api/scala/org/apache/spark/sql/Column.html#org.apache.spark.sql.Column" class="extype" name="org.apache.spark.sql.Column">Column</a>]</span>
       </span>
       
       <p class="shortcomment cmt">Validates if a column of the in put dataframe exist and is of the spark
-DataType provided</p><div class="fullcomment"><div class="comment cmt"><p>Validates if a column of the in put dataframe exist and is of the spark
-DataType provided</p></div><dl class="paramcmts block"><dt class="param">colName</dt><dd class="cmt"><p>
-  name of the column to extract</p></dd><dt class="param">location</dt><dd class="cmt"><p>
-  object that links to the position if an error is created</p></dd><dt>returns</dt><dd class="cmt"><p>
-  A Doric column that validates al the logic</p></dd></dl></div>
+DataType provided
+</p><div class="fullcomment"><div class="comment cmt"><p>Validates if a column of the in put dataframe exist and is of the spark
+DataType provided
+</p></div><dl class="paramcmts block"><dt class="param">colName</dt><dd class="cmt"><p>
+name of the column to extract</p></dd><dt class="param">location</dt><dd class="cmt"><p>
+object that links to the position if an error is created</p></dd><dt>returns</dt><dd class="cmt"><p>
+A Doric column that validates al the logic</p></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
