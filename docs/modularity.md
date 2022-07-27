@@ -11,7 +11,7 @@ problem in a modular way. We start from the following `DataFrame`, whose columns
 
 
 ```scala
-userDF.show
+userDF.show()
 // +---------+---------+--------+
 // |name_user|city_user|age_user|
 // +---------+---------+--------+
@@ -20,7 +20,7 @@ userDF.show
 // |     John|    Paris|      30|
 // +---------+---------+--------+
 // 
-userDF.printSchema
+userDF.printSchema()
 // root
 //  |-- name_user: string (nullable = true)
 //  |-- city_user: string (nullable = true)
@@ -99,8 +99,8 @@ userDF.select(age, team)
 // 	at cats.data.Validated.fold(Validated.scala:29)
 // 	at doric.sem.package$ErrorThrower.returnOrThrow(package.scala:9)
 // 	at doric.sem.TransformOps$DataframeTransformationSyntax.select(TransformOps.scala:139)
-// 	at repl.MdocSession$App$$anonfun$2.apply(modularity.md:89)
-// 	at repl.MdocSession$App$$anonfun$2.apply(modularity.md:86)
+// 	at repl.MdocSession$MdocApp$$anonfun$2.apply(modularity.md:89)
+// 	at repl.MdocSession$MdocApp$$anonfun$2.apply(modularity.md:86)
 ```
 
 
@@ -134,7 +134,7 @@ userDF.select(age, team)
 // 	at cats.data.Validated.fold(Validated.scala:29)
 // 	at doric.sem.package$ErrorThrower.returnOrThrow(package.scala:9)
 // 	at doric.sem.TransformOps$DataframeTransformationSyntax.select(TransformOps.scala:139)
-// 	at repl.MdocSession$App5$$anonfun$3.apply(modularity.md:137)
-// 	at repl.MdocSession$App5$$anonfun$3.apply(modularity.md:134)
+// 	at repl.MdocSession$MdocApp5$$anonfun$3.apply(modularity.md:137)
+// 	at repl.MdocSession$MdocApp5$$anonfun$3.apply(modularity.md:134)
 ```
 
