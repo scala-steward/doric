@@ -103,7 +103,7 @@ val sparkCol = f.expr("array_sort(value, (l, r) -> case " +
 
 val doricCol = colArray[Row]("value").sortBy(CName("name"), CNameOrd("age", Desc))
 // doricCol: ArrayColumn[Row] = TransformationDoricColumn(
-//   Kleisli(cats.data.Kleisli$$Lambda$2946/0x000000010131d040@70a7ebc9)
+//   Kleisli(cats.data.Kleisli$$Lambda$2946/0x0000000100b0a040@10a199e0)
 // )
 
 dfArrayStruct.select(sparkCol.as("sorted")).show(false)
@@ -151,7 +151,7 @@ val mapColDoric = colString("value").matches[String]
   .caseW(_.length > 4, "error key".lit)
   .otherwiseNull
 // mapColDoric: DoricColumn[String] = TransformationDoricColumn(
-//   Kleisli(cats.data.Kleisli$$Lambda$2946/0x000000010131d040@abce494)
+//   Kleisli(cats.data.Kleisli$$Lambda$2946/0x0000000100b0a040@732d2b59)
 // )
 
 dfMatch.withColumn("mapResult", mapColDoric).show()
