@@ -85,7 +85,7 @@ val complexCol: DoricColumn[Int] =
       .transform(_ + 1.lit)
       .aggregate(0.lit)(_ + _)
 // complexCol: DoricColumn[Int] = TransformationDoricColumn(
-//   Kleisli(scala.Function1$$Lambda$3081/0x00000008013e4840@5e8dfdab)
+//   Kleisli(scala.Function1$$Lambda$3081/0x00000008013e4840@1f6076cf)
 // )
   
 dfArrays.select(complexCol as "complexTransformation").show()
@@ -277,7 +277,7 @@ The default doric syntax is a little stricter and forces us to transform these v
 ```scala
 val colD = colInt("int") + 1.lit
 // colD: DoricColumn[Int] = TransformationDoricColumn(
-//   Kleisli(scala.Function1$$Lambda$3081/0x00000008013e4840@54fadf16)
+//   Kleisli(scala.Function1$$Lambda$3081/0x00000008013e4840@3f6a9e56)
 // )
 
 intDF.select(colD).show()
@@ -298,11 +298,11 @@ we have to _explicitly_ add the following import statement:
 import doric.implicitConversions.literalConversion
 val colSugarD = colInt("int") + 1
 // colSugarD: DoricColumn[Int] = TransformationDoricColumn(
-//   Kleisli(scala.Function1$$Lambda$3081/0x00000008013e4840@1f1a0bf8)
+//   Kleisli(scala.Function1$$Lambda$3081/0x00000008013e4840@3e2a68f1)
 // )
 val columConcatLiterals = concat("this", "is","doric") // concat expects DoricColumn[String] values, the conversion puts them as expected
 // columConcatLiterals: StringColumn = TransformationDoricColumn(
-//   Kleisli(scala.Function1$$Lambda$3081/0x00000008013e4840@1d1a6562)
+//   Kleisli(scala.Function1$$Lambda$3081/0x00000008013e4840@55d9c94c)
 // )
 
 intDF.select(colSugarD, columConcatLiterals).show()
